@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Practice counting</string>
+    <string name="choose_operation">Choose operation to practice</string>
+    <string name="choose_type_of_question">Choose type of question</string>
+    <string name="count_result">Always count result</string>
+    <string name="count_random_member">Count random member</string>
+    <string name="button_result" translatable="false">X %1$s Y = ?</string>
+    <string name="button_random" translatable="false">X %1$s ? = Y</string>
+    <string name="send_answer">Send answer</string>
+    <string name="input_answer">Input answer</string>
+    <string name="error_answer">Incorrect answer, input answer again</string>
+    <string name="equal_sign" translatable="false">=</string>
+    <string name="score_for_answer_header">Score\nfor answer:</string>
+    <string name="game_score_header">Game\nscore:</string>
+    <string name="timer_header">Timer:</string>
+    <string name="retry">Try again</string>
+    <string name="game_over">Game over</string>
+    <string name="right_answers">Count of right answers: %d</string>
+    <string name="all_answers">Count of all answers: %d</string>
+    <string name="game_score">Score for the last game: %d</string>
+    <string name="all_score">Sum of score for all games: %d</string>
+    <string name="paid">Paid: %d</string>
+</resources>

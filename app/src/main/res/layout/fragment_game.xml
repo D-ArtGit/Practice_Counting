@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    tools:context=".presentation.GameFragment">
+
+    <TextView
+        android:id="@+id/tvTimerHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/timer_header"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/tvCurrentAnswerScoreHeader"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/tvCurrentAnswerScoreHeader"
+        tools:layout_editor_absoluteY="28dp" />
+
+    <TextView
+        android:id="@+id/tvCurrentAnswerScoreHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center_horizontal"
+        android:text="@string/score_for_answer_header"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvTimerHeader"
+        app:layout_constraintEnd_toStartOf="@id/tvCurrentGameScoreHeader"
+        app:layout_constraintStart_toEndOf="@id/tvTimerHeader"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCurrentGameScoreHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/game_score_header"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvTimerHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tvCurrentAnswerScoreHeader" />
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="01:01:01"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/tvTimerHeader"
+        app:layout_constraintStart_toStartOf="@id/tvTimerHeader"
+        app:layout_constraintTop_toBottomOf="@id/tvCurrentAnswerScoreHeader"
+        tools:text="01:01:01" />
+
+    <TextView
+        android:id="@+id/tvCurrentAnswerScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvTimer"
+        app:layout_constraintEnd_toEndOf="@id/tvCurrentAnswerScoreHeader"
+        app:layout_constraintStart_toStartOf="@id/tvCurrentAnswerScoreHeader"
+        app:layout_constraintTop_toTopOf="@id/tvTimer"
+        tools:text="15" />
+
+    <TextView
+        android:id="@+id/tvCurrentGameScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvTimer"
+        app:layout_constraintEnd_toEndOf="@id/tvCurrentGameScoreHeader"
+        app:layout_constraintStart_toStartOf="@id/tvCurrentGameScoreHeader"
+        app:layout_constraintTop_toTopOf="@id/tvTimer"
+        tools:text="25" />
+
+    <TextView
+        android:id="@+id/tvFirstMember"
+        style="@style/QuestionTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        android:background="@color/blue"
+        android:textSize="34sp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/tvSign"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimer"
+        tools:text="7" />
+
+    <TextView
+        android:id="@+id/tvSign"
+        style="@style/QuestionTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:background="@drawable/circle_background"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvFirstMember"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/tvSecondMember"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/tvFirstMember"
+        app:layout_constraintTop_toTopOf="@+id/tvFirstMember"
+        tools:text="+" />
+
+    <TextView
+        android:id="@+id/tvSecondMember"
+        style="@style/QuestionTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="64dp"
+        android:background="@color/teal"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvFirstMember"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toEndOf="@+id/tvSign"
+        app:layout_constraintTop_toTopOf="@+id/tvFirstMember"
+        tools:text="10" />
+
+    <TextView
+        android:id="@+id/tvEqual"
+        style="@style/QuestionTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/circle_background"
+        android:text="@string/equal_sign"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@id/tvResult"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvFirstMember"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tvResult"
+        style="@style/QuestionTextStyle"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="32dp"
+        android:background="@color/green"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@id/tilAnswer"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvEqual"
+        app:layout_constraintVertical_bias="0.0"
+        tools:text="105" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilAnswer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintBottom_toTopOf="@id/btAnswer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvResult"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:hint="@string/input_answer"
+            android:inputType="number"
+            android:imeOptions="actionDone"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btAnswer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:capitalize="none"
+        android:text="@string/send_answer"
+        android:textAllCaps="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilAnswer"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

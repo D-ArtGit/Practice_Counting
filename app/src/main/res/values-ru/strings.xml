@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Тренируйся считать</string>
+    <string name="choose_operation">Выбери операцию для тренировки</string>
+    <string name="choose_type_of_question">Выбери тип вопроса</string>
+    <string name="count_result">Всегда считать результат</string>
+    <string name="count_random_member">Считать случайное число в примере</string>
+    <string name="send_answer">Отправить ответ</string>
+    <string name="input_answer">Введите ответ</string>
+    <string name="error_answer">Некорректный ответ, введите ответ повторно</string>
+    <string name="score_for_answer_header">Баллы\nза вопрос:</string>
+    <string name="game_score_header">Баллы\nза игру:</string>
+    <string name="timer_header">Таймер:</string>
+    <string name="retry">Попробовать снова</string>
+    <string name="game_over">Игра окончена</string>
+    <string name="right_answers">Число правильных ответов: %d</string>
+    <string name="all_answers">Всего ответов: %d</string>
+    <string name="game_score">Баллы за последнюю игру: %d</string>
+    <string name="all_score">Баллы за все игры: %d</string>
+    <string name="paid">Выплачено: %d</string>
+</resources>
