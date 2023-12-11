@@ -20,4 +20,40 @@
     <string name="game_score">Score for the last game: %d</string>
     <string name="all_score">Sum of score for all games: %d</string>
     <string name="paid">Paid: %d</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="settings">Settings</string>
+    <string name="general">General</string>
+    <string name="game_md_settings">Multiplication/division settings</string>
+    <string name="game_as_settings">Addition/subtraction settings</string>
+
+    <!-- General Preferences -->
+    <string name="all_game_score">All game score</string>
+    <string name="paid_score">Paid score</string>
+    <string name="password">Password</string>
+
+
+    <!-- Game Preferences -->
+    <string name="md_interval">Multiplication and division timer interval</string>
+    <string name="as_interval">Addition and subtraction timer interval</string>
+    <string name="md_interval_rnd">Multiplication and division timer interval for random game</string>
+    <string name="as_interval_rnd">Addition and subtraction timer interval for random game</string>
+    <string name="md_score_steps">Multiplication and division score steps</string>
+    <string name="as_score_steps">Addition and subtraction score steps</string>
+    <string name="md_score_steps_header">Choose multiplication and division score steps</string>
+    <string name="as_score_steps_header">Choose addition and subtraction score steps</string>
+    <string name="md_incorrect_answer_penalty">Multiplication and division penalty points</string>
+    <string name="as_incorrect_answer_penalty">Addition and subtraction penalty points</string>
+    <string name="md_missed_answer_penalty">Multiplication and division penalty points</string>
+    <string name="as_missed_answer_penalty">Addition and subtraction penalty points</string>
+    <string name="three_seconds">3 seconds</string>
+    <string name="five_seconds">5 seconds</string>
+    <string name="seven_seconds">7 seconds</string>
+    <string name="ten_seconds">10 seconds</string>
+    <string name="fifteen_seconds">15 seconds</string>
+    <string name="enter_password">Enter password</string>
+    <string name="set_password">Set the password</string>
+    <string name="incorrect_password">Password is incorrect. Try again.</string>
+
 </resources>

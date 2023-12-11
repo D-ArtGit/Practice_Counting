@@ -1,0 +1,45 @@
+<resources>
+    <!-- Game Preference -->
+    <string-array name="interval_entries">
+        <item>@string/three_seconds</item>
+        <item>@string/five_seconds</item>
+        <item>@string/seven_seconds</item>
+        <item>@string/ten_seconds</item>
+        <item>@string/fifteen_seconds</item>
+    </string-array>
+
+    <string-array name="interval_values">
+        <item>3</item>
+        <item>5</item>
+        <item>7</item>
+        <item>10</item>
+        <item>15</item>
+    </string-array>
+
+    <string-array name="score_for_right_answer_entries">
+        <item>30</item>
+        <item>20</item>
+        <item>15</item>
+        <item>10</item>
+        <item>7</item>
+        <item>5</item>
+        <item>0</item>
+    </string-array>
+
+    <string-array name="score_for_right_answer_values">
+        <item>30</item>
+        <item>20</item>
+        <item>15</item>
+        <item>10</item>
+        <item>7</item>
+        <item>5</item>
+        <item>0</item>
+    </string-array>
+
+    <integer-array name="default_score_for_right_answer">
+        <item>15</item>
+        <item>10</item>
+        <item>5</item>
+    </integer-array>
+
+</resources>

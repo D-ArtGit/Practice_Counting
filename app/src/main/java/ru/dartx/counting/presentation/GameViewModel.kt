@@ -31,11 +31,11 @@ class GameViewModel(
     val formattedTimer: LiveData<String>
         get() = _formattedTimer
 
-    private val _currentAnswerScore = MutableLiveData<Int>(0)
+    private val _currentAnswerScore = MutableLiveData(0)
     val currentAnswerScore: LiveData<Int>
         get() = _currentAnswerScore
 
-    private val _currentGameScore = MutableLiveData<Int>(0)
+    private val _currentGameScore = MutableLiveData(0)
     val currentGameScore: LiveData<Int>
         get() = _currentGameScore
 
@@ -54,7 +54,7 @@ class GameViewModel(
     private var countOfAnswers = 0
     private var countOfRightAnswers = 0
     private val defPreference = PreferenceManager.getDefaultSharedPreferences(application)
-    private var score = defPreference.getInt("all_game_score", 0)
+    private var score = defPreference.getString(SettingsActivity.ALL_GAME_SCORE, "0")?.toInt() ?: 0
 
     init {
         startGame()
@@ -68,7 +68,7 @@ class GameViewModel(
     }
 
     private fun getGameSetting() {
-        gameSettings = getGameSettingsUseCase(operation, typeOfQuestion)
+        gameSettings = getGameSettingsUseCase(operation, typeOfQuestion, application)
     }
 
     private fun startMainTimer() {
@@ -102,7 +102,8 @@ class GameViewModel(
             }
 
             override fun onFinish() {
-                _currentAnswerScore.value = 0
+                _currentGameScore.value = _currentGameScore.value?.minus(gameSettings.missedAnswerPenalty)
+                generateQuestion()
             }
 
         }
@@ -120,7 +121,7 @@ class GameViewModel(
         if (checkAnswerIsError(number)) {
             _isErrorAnswer.value = true
             _currentGameScore.value =
-                currentGameScore.value?.minus(gameSettings.scoreForRightAnswer[gameSettings.scoreForRightAnswer.size - 1])
+                currentGameScore.value?.minus(gameSettings.incorrectAnswerPenalty)
         } else {
             countOfRightAnswers++
             _isErrorAnswer.value = false
@@ -145,7 +146,7 @@ class GameViewModel(
 
     private fun finishGame() {
         score += currentGameScore.value!!
-        defPreference.edit().putInt("all_game_score", score).apply()
+        defPreference.edit().putString("all_game_score", score.toString()).apply()
         _gameResult.value = GameResult(
             countOfRightAnswers,
             countOfAnswers,

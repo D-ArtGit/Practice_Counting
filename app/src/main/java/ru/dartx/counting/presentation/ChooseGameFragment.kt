@@ -1,10 +1,12 @@
 package ru.dartx.counting.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.preference.PreferenceManager
 import ru.dartx.counting.R
 import ru.dartx.counting.databinding.FragmentChooseGameBinding
 import ru.dartx.counting.domain.entity.Operation
@@ -13,10 +15,6 @@ class ChooseGameFragment : Fragment() {
     private var _binding: FragmentChooseGameBinding? = null
     private val binding: FragmentChooseGameBinding
         get() = _binding ?: throw RuntimeException("Binding is null")
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -68,6 +66,42 @@ class ChooseGameFragment : Fragment() {
                     )
                     .addToBackStack(BACKSTACK_NAME)
                     .commit()
+            }
+            ivSettings.setOnClickListener {
+                val defPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+                val passwordInSetting = defPreferences.getString(SettingsActivity.PASSWORD, "")
+                if (passwordInSetting.isNullOrEmpty()) {
+                    PasswordDialog.showDialog(
+                        requireContext(), object : PasswordDialog.Listener {
+                            override fun onClick(password: String): String? {
+                                defPreferences.edit().putString(SettingsActivity.PASSWORD, password)
+                                    .apply()
+                                startActivity(
+                                    Intent(
+                                        requireActivity(),
+                                        SettingsActivity::class.java
+                                    )
+                                )
+                                return null
+                            }
+                        },
+                        getString(R.string.set_password)
+                    )
+                } else {
+                    PasswordDialog.showDialog(
+                        requireContext(), object : PasswordDialog.Listener {
+                            override fun onClick(password: String): String? {
+                                return if (password != passwordInSetting) {
+                                    getString(R.string.incorrect_password)
+                                } else {
+                                    startActivity(Intent(requireActivity(), SettingsActivity::class.java))
+                                    null
+                                }
+                            }
+                        },
+                        getString(R.string.enter_password)
+                    )
+                }
             }
         }
     }

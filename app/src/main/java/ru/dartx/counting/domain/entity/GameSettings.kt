@@ -6,5 +6,7 @@ data class GameSettings(
     val maxValueOfMember: Int,
     val scoreForRightAnswer: List<Int>,
     val gameTimeInSeconds: Int,
-    val timerStepInSeconds: Int
+    val timerStepInSeconds: Int,
+    val incorrectAnswerPenalty: Int,
+    val missedAnswerPenalty: Int
 )

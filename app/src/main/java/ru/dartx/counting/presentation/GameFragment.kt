@@ -113,8 +113,8 @@ class GameFragment : Fragment() {
                 tvCurrentGameScore.text = it.toString()
             }
             viewModel.isErrorAnswer.observe(viewLifecycleOwner) {
-                if (it) etAnswer.error = getString(R.string.error_answer)
-                else etAnswer.error = null
+                if (it) tilAnswer.error = getString(R.string.error_answer)
+                else tilAnswer.error = null
             }
             viewModel.gameResult.observe(viewLifecycleOwner) {
                 requireActivity().supportFragmentManager.beginTransaction()

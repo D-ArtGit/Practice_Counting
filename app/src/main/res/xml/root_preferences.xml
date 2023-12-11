@@ -1,0 +1,104 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/general">
+
+        <EditTextPreference
+            app:key="all_game_score"
+            app:defaultValue="0"
+            app:title="@string/all_game_score"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:defaultValue="0"
+            app:key="paid_score"
+            app:title="@string/paid_score"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:key="password"
+            app:defaultValue=""
+            app:title="@string/password" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/game_md_settings">
+
+        <ListPreference
+            app:defaultValue="5"
+            app:entries="@array/interval_entries"
+            app:entryValues="@array/interval_values"
+            app:key="md_interval"
+            app:title="@string/md_interval"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            app:defaultValue="7"
+            app:entries="@array/interval_entries"
+            app:entryValues="@array/interval_values"
+            app:key="md_interval_rnd"
+            app:title="@string/md_interval_rnd"
+            app:useSimpleSummaryProvider="true" />
+
+        <MultiSelectListPreference
+            app:entries="@array/score_for_right_answer_entries"
+            app:entryValues="@array/score_for_right_answer_values"
+            app:key="md_score_steps"
+            app:summary="@string/md_score_steps_header"
+            app:title="@string/md_score_steps" />
+
+        <EditTextPreference
+            app:defaultValue="5"
+            app:key="md_incorrect_answer_penalty"
+            app:title="@string/md_incorrect_answer_penalty"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            app:defaultValue="10"
+            app:key="md_missed_answer_penalty"
+            app:title="@string/md_missed_answer_penalty"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/game_as_settings">
+
+        <ListPreference
+            app:defaultValue="5"
+            app:entries="@array/interval_entries"
+            app:entryValues="@array/interval_values"
+            app:key="as_interval"
+            app:title="@string/as_interval"
+            app:useSimpleSummaryProvider="true" />
+
+        <ListPreference
+            app:defaultValue="7"
+            app:entries="@array/interval_entries"
+            app:entryValues="@array/interval_values"
+            app:key="as_interval_rnd"
+            app:title="@string/as_interval_rnd"
+            app:useSimpleSummaryProvider="true" />
+
+        <MultiSelectListPreference
+            app:entries="@array/score_for_right_answer_entries"
+            app:entryValues="@array/score_for_right_answer_values"
+            app:key="as_score_steps"
+            app:summary="@string/as_score_steps_header"
+            app:title="@string/as_score_steps" />
+
+        <EditTextPreference
+            android:inputType="number"
+            app:defaultValue="5"
+            app:key="as_incorrect_answer_penalty"
+            app:title="@string/as_incorrect_answer_penalty"
+            app:useSimpleSummaryProvider="true" />
+
+        <EditTextPreference
+            android:inputType="number"
+            app:defaultValue="10"
+            app:key="as_missed_answer_penalty"
+            app:title="@string/as_missed_answer_penalty"
+            app:useSimpleSummaryProvider="true" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
