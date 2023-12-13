@@ -19,7 +19,7 @@
     <string name="all_answers">Count of all answers: %d</string>
     <string name="game_score">Score for the last game: %d</string>
     <string name="all_score">Sum of score for all games: %d</string>
-    <string name="paid">Paid: %d</string>
+    <string name="paid">Paid: %s</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Preference Titles -->
@@ -35,10 +35,10 @@
 
 
     <!-- Game Preferences -->
-    <string name="md_interval">Multiplication and division timer interval</string>
-    <string name="as_interval">Addition and subtraction timer interval</string>
-    <string name="md_interval_rnd">Multiplication and division timer interval for random game</string>
-    <string name="as_interval_rnd">Addition and subtraction timer interval for random game</string>
+    <string name="md_interval">Result game\'s timer interval for multiplication and division</string>
+    <string name="as_interval">Result game/s timer interval for addition and subtraction</string>
+    <string name="md_interval_rnd">Random member game\'s interval for multiplication and division</string>
+    <string name="as_interval_rnd">Random member game\'s interval addition and subtraction timer interval</string>
     <string name="md_score_steps">Multiplication and division score steps</string>
     <string name="as_score_steps">Addition and subtraction score steps</string>
     <string name="md_score_steps_header">Choose multiplication and division score steps</string>

@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import androidx.preference.PreferenceManager
 import ru.dartx.counting.R
 import ru.dartx.counting.databinding.FragmentGameFinishedBinding
 import ru.dartx.counting.domain.entity.GameResult
@@ -84,6 +85,9 @@ class GameFinishedFragment : Fragment() {
                 getString(R.string.all_answers, gameResult.allAnswersCount)
             tvGameScore.text = getString(R.string.game_score, gameResult.currentGameScore)
             tvAllGameScore.text = getString(R.string.all_score, gameResult.allGameScore)
+            val defPreferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+            tvPaid.text =
+                getString(R.string.paid, defPreferences.getString(SettingsActivity.PAID_SCORE, "0"))
         }
     }
 
